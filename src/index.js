@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {BrowserRouter as Router} from 'react-router-dom';
+
 ReactDOM.render(
-  <React.StrictMode>
+  // routerul serveste ca un PARENT component aici,
+  // practic am facut un wrapper (am inmagazinat tot in interiorul lui)
+  <Router> 
+     <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Router>,
   document.getElementById('root')
 );
 
