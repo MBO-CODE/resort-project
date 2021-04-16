@@ -1,23 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 // import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from "react-router-dom";
+import { RoomProvider } from "./context";
 
 ReactDOM.render(
   // routerul serveste ca un PARENT component aici,
   // practic am facut un wrapper (am inmagazinat tot in interiorul lui)
-  <Router> 
-     <React.StrictMode>
-    <App />
-  </React.StrictMode>
-  </Router>,
-  document.getElementById('root')
+  <RoomProvider>
+<Router>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Router>
+  </RoomProvider>,
+  
+  document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
