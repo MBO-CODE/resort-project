@@ -19,11 +19,11 @@ function App() {
       {/* asta facem switch-ul aici. Si totul e incadrat in switch pentru a avea efect */}
       <Switch>
         {/* practic, daca folosim in URL "/" o sa ne duca pe componenta de "HOME" fiind setata de noi */}
-        {/* "exact"  */}
+        {/* "exact" - e folosit pentru a te duce STRICT pe URL-ul respectiv*/}
         <Route exact path="/" component={Home} />
         <Route exact path="/rooms/" component={Rooms} />
         {/* :slug -> poate sa aibe orice nume e.g: :unclebobi */}
-        <Route exact path="/rooms/:differentRooms" component={SingleRoom} />
+        <Route exact path="/rooms/:slug" component={SingleRoom} />
 
         <Route component={Error} />
       </Switch>

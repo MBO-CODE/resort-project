@@ -43,7 +43,7 @@ export default class Services extends Component {
                 <h6>{item.title}</h6>
                 <p>{item.info}</p>
               </article>
-            );
+             );
           })}
         </div>
       </section>
