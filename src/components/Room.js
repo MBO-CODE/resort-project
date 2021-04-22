@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import defaultImg from "../images/room-1.jpeg";
+import PropTypes from "prop-types/";
 
 // FIXED ! Prob was room wasn't into {} -> we didn't read the data ok.
 export default function Room({ room }) {
@@ -11,7 +12,27 @@ export default function Room({ room }) {
         {/* images[0]  -> cannot read poperty 0
           FIX THIS SHIT! */}
         <img src={images[0] || defaultImg} alt="single room" />
+        <div className="price-top">
+          <h6>${price}</h6>
+          <p>per night</p>
+        </div>
+
+        <Link to={`/rooms/${slug}`} className="btn-primary room-link">
+          Features
+        </Link>
       </div>
+      <p className="room-info">{name}</p>
     </article>
   );
+}
+
+
+// eslint-disable-next-line react/no-typos
+Room.propTypes = {
+  room : PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(PropTypes.string).isRequired,
+    price: PropTypes.number.isRequired
+  })
 }
